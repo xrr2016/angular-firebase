@@ -1,4 +1,13 @@
 <div style="text-align:center">
   <h1>Welcome to {{title}}!</h1>
-  <h6>{{ descrition }}</h6>
+  <h1>{{ title }}</h1>
+  <h2>My favorite hero is: {{ myHero.name }}</h2>
+  <p>Heros:</p>
+  <ul>
+    <li *ngFor="let hero of heroes" >
+      {{ hero.name }}
+      <button (click)="deleteHero(hero)">X</button>
+    </li>
+  </ul>
+  <p *ngIf="heroes.length > 3">There are many heroes!</p>
 </div>

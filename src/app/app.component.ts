@@ -3,16 +3,7 @@ import Hero from './class/hero'
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>{{ title }}</h1>
-    <h2>My favorite hero is: {{ myHero.name }}</h2>
-    <p>Heros:</p>
-    <ul>
-      <li *ngFor="let hero of heroes">{{ hero.name }}</li>
-    </ul>
-    <p *ngIf="heroes.length > 3">There are many heroes!</p>
-  `,
-  // templateUrl: './app.component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -29,6 +20,14 @@ export class AppComponent {
   constructor() {
     this.title = 'Tour of Heroes'
     this.desc = 'Identity'
+  }
+
+  getVal ():number {
+    return 10
+  }
+
+  deleteHero (hero):void {
+    this.heroes.splice(this.heroes.findIndex(hero => hero.id === hero.id), 1)
   }
 }
 
