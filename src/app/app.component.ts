@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Hero from './class/hero'
 
 @Component({
@@ -6,7 +6,7 @@ import Hero from './class/hero'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'hello!'
   birthdate = new Date()
 
@@ -14,6 +14,10 @@ export class AppComponent {
     name: 'superman',
     // birthdate: '1989,10,10'
   }
+  ngOnInit () {
+    console.log('init')
+  }
+
 }
 
 
