@@ -1,18 +1,3 @@
-<div style="text-align:center">
-  <h1>Welcome to {{title}}!</h1>
-  <h1>{{ title }}</h1>
-  <h2>My favorite hero is: {{ myHero.name }}</h2>
-  <p>Heros: {{ }}</p>
-  <ul>
-    <li *ngFor="let hero of heroes" [ngClass]="itemClass" (click)="clickItem=$event">
-      {{ hero.name }}
-      <button (click)="deleteHero(hero)">X</button>
-    </li>
-  </ul>
-  <table border="1">
-    <tr><td [attr.colspan]="1 + 1">1 - 2</td></tr>
-    <tr><td>Five</td><td>Six</td></tr>
-  </table>
-  <img [src]="imgSrc" (click)="onClick()">
-  <p *ngIf="heroes.length > 3">There are many heroes!</p>
-</div>
+<div>Title through uppercase pipe: {{title | uppercase}}</div>
+<!-- pipe with configuration argument => "February 25, 1970" -->
+<div>Birthdate: {{ hero?.birthdate | date:'longDate'}}</div>
