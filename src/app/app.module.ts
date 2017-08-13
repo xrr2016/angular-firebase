@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from 'angularfire2/index'
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+
+import firebaseConfig from '../environments/firebase.config'
 
 @NgModule({
   declarations: [
@@ -10,7 +13,8 @@ import { UserComponent } from './user/user.component';
     UserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

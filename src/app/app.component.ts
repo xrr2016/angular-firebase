@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Hero from './class/hero'
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,10 @@ import Hero from './class/hero'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ngOnInit () {
-    
+  constructor() {
+  
+  }
+  ngOnInit() {
   }
 }
 

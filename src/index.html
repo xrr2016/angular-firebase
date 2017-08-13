@@ -11,25 +11,6 @@
 
 <body>
   <app-root>Loading...</app-root>
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC9lJnlctYWf-Ls_l29y1QY10Hn--CzhmY",
-      authDomain: "angular-firebase-72844.firebaseapp.com",
-      databaseURL: "https://angular-firebase-72844.firebaseio.com",
-      projectId: "angular-firebase-72844",
-      storageBucket: "angular-firebase-72844.appspot.com",
-      messagingSenderId: "21143885372"
-    };
-    firebase.initializeApp(config);
-    const root = firebase.database().ref('messages/2')
-
-    root.on('value', (snap) => {
-      console.log(snap.key, snap.val())
-    })
-  </script>
-
 </body>
 
 </html>
