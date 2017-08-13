@@ -7,17 +7,9 @@ import Hero from './class/hero'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'hello!'
-  birthdate = new Date()
-
-  hero = {
-    name: 'superman',
-    // birthdate: '1989,10,10'
-  }
   ngOnInit () {
-    console.log('init')
+    
   }
-
 }
 
 
