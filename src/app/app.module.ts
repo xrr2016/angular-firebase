@@ -21,6 +21,7 @@ import { UserItemComponent }         from './user-item/user-item.component';
 import { ChatService }               from './services/chat.service'
 import { AuthService }               from './services/auth.service'
 import { appRoutes }                 from '../routes'
+import { environment }                from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,10 @@ import { appRoutes }                 from '../routes'
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [AuthService, ChatService],
   bootstrap: [AppComponent]
