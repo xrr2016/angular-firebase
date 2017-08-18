@@ -1,3 +1,2 @@
-<p>
-  chat-from works!
-</p>
+<input class="chat-input" [(ngModel)]="message" (keydown)="handleSubmit($event)" />
+<button class="chat-button" (click)="send()">发送</button>
