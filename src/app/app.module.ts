@@ -8,7 +8,7 @@ import { AngularFireAuthModule }     from 'angularfire2/auth'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 
 import { AppComponent }              from './app.component';
-import { ChatFromComponent }         from './chat-from/chat-from.component';
+import { ChatFormComponent }         from './chat-form/chat-form.component';
 import { ChatRoomComponent }         from './chat-room/chat-room.component';
 import { FeedbackComponent }         from './feedback/feedback.component';
 import { MessageComponent }          from './message/message.component';
@@ -26,7 +26,7 @@ import { environment }                from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent,
-    ChatFromComponent,
+    ChatFormComponent,
     ChatRoomComponent,
     FeedbackComponent,
     MessageComponent,
