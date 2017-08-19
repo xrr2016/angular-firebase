@@ -25,15 +25,18 @@ export class ChatService {
   }
 
   sendMessage (message: string) {
+    // const email = this.user.email
+    const email = 'test@test.com'
     const timestamp = this.getTimeStamp()
-    const email = this.user.emai
     this.chatMessages = this.getMessages()
     this.chatMessages.push({ 
       message,
-      timeSent: timestamp,
-      username: this.user.username,
-      email 
+      email,
+      username: 'test',
+      timeSent: timestamp
+      // username: this.username
     })
+    console.log('send message!')
   }
 
   getMessages (): FirebaseListObservable<ChatMessage[]> {
@@ -48,7 +51,7 @@ export class ChatService {
 
   getTimeStamp () {
     const now = new Date()
-    const date = `${now.getUTCFullYear}/${now.getUTCMonth() + 1}/${now.getUTCDate()}`
+    const date = `${now.getUTCFullYear()}/${now.getUTCMonth() + 1}/${now.getUTCDate()}`
     const time = `${now.getUTCHours()}/${now.getUTCMinutes()}/${now.getUTCSeconds()}`
     return `${date} ${time}`
   }

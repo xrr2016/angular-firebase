@@ -1,3 +1,5 @@
-<p>
-  feedback works!
-</p>
+<section class="feed-back">
+  <div *ngFor="let message of feedbacks | async" class="message">
+    <app-message [chatMessage]=message></app-message>
+  </div>
+</section>

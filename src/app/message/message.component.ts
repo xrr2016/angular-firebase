@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
+import { AuthService }              from '../services/auth.service'
+import { ChatService }              from '../services/chat.service'
+import { ChatMessage }              from '../models/chat-message.model'
 
 @Component({
   selector: 'app-message',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor() { }
+  @Input() chatMessage: ChatMessage
+  userName: string
+  userEmail: string
+  messageContent: string
+  timeSent: Date
 
-  ngOnInit() {
+  constructor () { }
+
+  ngOnInit (chatMessage = this.chatMessage) {
+    this.timeSent = chatMessage.timeSent
+    this.userName = chatMessage.username
+    this.userEmail = chatMessage.email
+    this.messageContent = chatMessage.message
   }
 
 }
