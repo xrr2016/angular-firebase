@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  background: #eee;
+  margin: 0;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+app-chat-room {
+  display: flex;
+  flex-direction: column;
+}
+
+app-navbar {
+  width: 100%;
+}
+
+app-chat-form {
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.message {
+  display: block;
+  height: auto;
+}
+
+
+
+
+
