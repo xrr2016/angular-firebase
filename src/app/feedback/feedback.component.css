@@ -1,0 +1,12 @@
+.feed-back {
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 500px;
+  flex-direction: column;
+}
+
+.message {
+  margin: 10px 0;
+  flex-direction: column;
+}
