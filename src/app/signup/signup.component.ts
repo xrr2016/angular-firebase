@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router'
-import { NgForm }            from '@angular/forms'
 import { AuthService }       from '../services/auth.service'
-
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +11,7 @@ export class SignupComponent implements OnInit {
   
   email: string
   password: string
-  displayName: string
+  userame: string
   error: object
 
   constructor (
@@ -22,7 +20,7 @@ export class SignupComponent implements OnInit {
   ) { }
 
   userSignUp () {
-    this.authService.signUp(this.email, this.password, this.displayName)
+    this.authService.signUp(this.email, this.password, this.userame)
       .then(res => this.router.navigate(['chat']))
       .catch(err => this.error = err)
   }

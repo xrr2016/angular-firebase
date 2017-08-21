@@ -5,10 +5,11 @@ import { Observable } from 'rxjs/observable'
 import { ChatMessage } from '../models/chat-message.model'
 import { AuthService } from './auth.service'
 import * as firebase from 'firebase/app'
+import { User } from '../models/user.model'
 
 @Injectable()
 export class ChatService {
-  user: any
+  user: User
   chatMessage: ChatMessage
   chatMessages: FirebaseListObservable<ChatMessage[]>
   username: Observable<string>
@@ -25,16 +26,15 @@ export class ChatService {
   }
 
   sendMessage (message: string) {
-    // const email = this.user.email
-    const email = 'test@test.com'
+    console.log(this.user)
+    const { username, email } = this.user
     const timestamp = this.getTimeStamp()
     this.chatMessages = this.getMessages()
-    this.chatMessages.push({ 
-      message,
+    this.chatMessages.push({
       email,
-      username: 'test',
-      timeSent: timestamp
-      // username: this.username
+      message,
+      username,
+      timeSent: timestamp,
     })
     console.log('send message!')
   }

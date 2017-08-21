@@ -32,21 +32,21 @@ export class AuthService {
       }) 
   }
 
-  signUp(email: string, password: string, displayName: string) {
+  signUp(email: string, password: string, username: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(user => {
         this.authState = user
         const status = 'online'
-        this.setUser(email, displayName, status)
+        this.setUser(email, username, status)
       })
       .catch(err => console.log(err))
   }
 
-  setUser (email: string, displayName: string, status: string): void {
+  setUser (email: string, userame: string, status: string): void {
     const path = `users/${this.currentUserId}`
     const data = {
       email,
-      displayName,
+      userame,
       status
     }
     this.db.object(path).update(data)
