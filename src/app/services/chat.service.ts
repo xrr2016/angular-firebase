@@ -22,7 +22,20 @@ export class ChatService {
       if (auth) {
         this.user = auth
       }
+      this.getUser().subscribe(a => {
+        this.username = a.username
+      })
     })
+  }
+
+  getUser () {
+    const userId = this.user.uid
+    const path = `/users/${userId}`
+    return this.db.object(path)
+  }
+
+  getUsers () {
+    return this.db.list('/users')
   }
 
   sendMessage (message: string) {

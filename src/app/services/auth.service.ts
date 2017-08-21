@@ -10,6 +10,7 @@ import { User }                from '../models/user.model'
 export class AuthService {
   private user: Observable<firebase.User>
   private authState: any
+  public error: object
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -39,7 +40,7 @@ export class AuthService {
         const status = 'online'
         this.setUser(email, username, status)
       })
-      .catch(err => console.log(err))
+      .catch(err => this.error = err)
   }
 
   setUser (email: string, userame: string, status: string): void {
