@@ -12,8 +12,8 @@ export class SignupComponent implements OnInit {
   email: string
   password: string
   username: string
-  error: object
-
+  error: any
+  
   constructor (
     private authService: AuthService,
     private router: Router
@@ -22,17 +22,17 @@ export class SignupComponent implements OnInit {
   userSignUp () {
     this.authService.signUp(this.email, this.password, this.username)
       .then(res => {
-        const { error } = this.authService
-        if (error) {
-          this.error = error
-        } else {
+        // if (this.authService.error) {
+        //   this.error = this.authService.error
+        // } else {
           this.router.navigate(['chat']) 
-        }
+        // }
       })
   }
-  clearError () {
-    this.error = {}
-  }
+
+  // clearError () {
+  //   this.authService.clearError()
+  // }
 
   ngOnInit () {
   }

@@ -5,22 +5,22 @@
       <label for="email" class="label">
         Email
         <input type="email" id="email" name="email" placeholder="Enter you email"
-        [(ngModel)]="email" (input)="clearError()" class="form-input" maxlength="60" required>
+        [(ngModel)]="email" class="form-input" maxlength="60" required>
       </label>
 
       <label for="password" class="label">
         Password
         <input type="password" id="password" name="password" placeholder="Enter you password"
-        [(ngModel)]="password" (input)="clearError()" class="form-input" required>
+        [(ngModel)]="password" class="form-input" required>
       </label>
 
-      <label for="displayName" class="label">
+      <label for="username" class="label">
         User name
-        <input type="text" id="userame" name="userame" placeholder="Enter you userame"
-          [(ngModel)]="username" (input)="clearError()" class="form-input" required>
+        <input type="text" id="username" name="username" placeholder="Enter you username"
+          [(ngModel)]="username"  class="form-input" required>
       </label>
 
-      <p class="error" *ngIf="error">{{ error.message }}</p>
+      <!-- <p class="error" *ngIf="error">{{ error.message }}</p> -->
 
       <button type="submit" [disabled]="!signUpForm.form.valid" class="btn" 
         id="btn-signUp" type="submit" (click)="userSignUp()">Sign Up</button>

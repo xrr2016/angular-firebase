@@ -12,7 +12,6 @@ export class ChatService {
   user: User
   chatMessage: ChatMessage
   chatMessages: FirebaseListObservable<ChatMessage[]>
-  username: Observable<string>
 
   constructor (
     private db: AngularFireDatabase, 
@@ -22,9 +21,6 @@ export class ChatService {
       if (auth) {
         this.user = auth
       }
-      this.getUser().subscribe(a => {
-        this.username = a.username
-      })
     })
   }
 
@@ -40,13 +36,12 @@ export class ChatService {
 
   sendMessage (message: string) {
     console.log(this.user)
-    const { username, email } = this.user
+    const { email } = this.user
     const timestamp = this.getTimeStamp()
     this.chatMessages = this.getMessages()
     this.chatMessages.push({
       email,
       message,
-      username,
       timeSent: timestamp,
     })
     console.log('send message!')

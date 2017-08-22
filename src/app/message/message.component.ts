@@ -11,7 +11,7 @@ import { ChatMessage }              from '../models/chat-message.model'
 export class MessageComponent implements OnInit {
 
   @Input() chatMessage: ChatMessage
-  userName: string
+  // userName: string
   userEmail: string
   messageContent: string
   timeSent: Date
@@ -21,7 +21,7 @@ export class MessageComponent implements OnInit {
 
   ngOnInit (chatMessage = this.chatMessage) {
     this.timeSent = chatMessage.timeSent
-    this.userName = chatMessage.username
+    // this.userName = chatMessage.username
     this.userEmail = chatMessage.email
     this.messageContent = chatMessage.message
   }

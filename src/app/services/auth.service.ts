@@ -42,7 +42,7 @@ export class AuthService {
       })
       .catch(err => this.error = err)
   }
-
+  
   setUser (email: string, userame: string, status: string): void {
     const path = `users/${this.currentUserId}`
     const data = {
@@ -60,6 +60,10 @@ export class AuthService {
     // this.db.object(path).update(data)
       // .catch(err => console.log(err))
   }
+
+  // clearError () {
+  //   this.error.message = ''
+  // }
 }
 
 
