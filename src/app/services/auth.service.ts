@@ -32,6 +32,12 @@ export class AuthService {
         this.router.navigate(['chat'])
       }) 
   }
+  logout () {
+    
+  }
+  authUser () {
+    return this.user
+  }
 
   signUp(email: string, password: string, username: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)

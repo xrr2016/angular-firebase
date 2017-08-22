@@ -1,3 +1,10 @@
-<p>
-  navbar works!
-</p>
+<section class="navbar">
+  <div class="logo"></div>
+  <div class="heading"><a routerLink="/">baseChat</a></div>
+  <div class="links">
+    <a *ngIf="!(user | async)?.uid" href="#" (click)="login()">Login</a> 
+    <a *ngIf="!(user | async)?.uid" routerLink="/signUp" (click)="login()">SignUp</a> 
+    <a *ngIf="(user | async)?.uid" href="#" (click)="login()">Hello, {{ userEmail }}</a> 
+    <a *ngIf="(user | async)?.uid" href="#" (click)="logout()">Logout</a> 
+  </div>
+</section>
